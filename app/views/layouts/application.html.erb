@@ -13,6 +13,7 @@
   <body>
     <header>
       <span>Bookers</span>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <% if user_signed_in? %>
         </li>
         <li>
@@ -38,6 +39,7 @@
           <%= link_to "ログイン", new_user_session_path %>
         </li>
       <% end %>
+      </nav>
     </header>
     <footer>
       <div class="container mt-5">
