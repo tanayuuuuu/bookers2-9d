@@ -18,3 +18,34 @@
 
 <h1>Book detail</h1>
 
+<% @books.each do |book| %>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>
+        <%= link_to current_user.name, user_path(current_user.id) %>
+        <%= image_tag book.user.get_profile_image(100,100) %>
+      </td>
+      <td>
+        <%= book.title %>
+      </td>
+      <td>
+        <%= book.body %>
+      </td>
+      <td>
+        <%= link_to "Edit", edit_book_path(@book) %>
+      </td>
+      <td>
+        <%= link_to "Destroy", books_path %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<% end %>
+
+
+
+
+
+
+
