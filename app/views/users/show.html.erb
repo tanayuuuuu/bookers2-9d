@@ -1,12 +1,25 @@
-<%= render "user", user: @user, book: @book %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+  <%= render "user", user: @user, book: @book %>
 
+    <div class="col-md-8 offset-md-1">
+    <h1>Books</h1>
+     <table class="table table-hover table-inverse">
+       <thred>
+         <tr>
+           <th></th>
+           <% @books.each do |book| %>
+           <%= image_tag book.user.get_profile_image(100,100) %>
+             <p>Title</p>
+              <span><%= book.title %></span>
 
-<h1>Books</h1>
-<% @books.each do |book| %>
-<%= image_tag book.user.get_profile_image(100,100) %>
-  <p>Title</p>
-  <span><%= book.title %></span>
+              <P>Opinion</P>
+              <span><%= book.body %></span>
+           <% end %>
+         </tr>
+       </thred>
+     </table>
+    </div>
+  </div>
+</div>
 
-  <P>Opinion</P>
-  <span><%= book.body %></span>
-<% end %>
