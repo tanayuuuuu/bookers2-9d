@@ -9,7 +9,7 @@
         <tbody>
           <tr>
             <td>
-              <%= image_tag @book.user.get_profile_image(100,100) %></br>
+              <%= link_to image_tag @book.user.get_profile_image(100,100) %></br>
               <%= link_to current_user.name, user_path(current_user.id) %>
             </td>
             <td>
