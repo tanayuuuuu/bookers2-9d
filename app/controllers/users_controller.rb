@@ -31,6 +31,11 @@ class UsersController < ApplicationController
 
  def create
   @user = User.new(user_params)
+  if @usre.save
+   redirect_to usre_path(@user.id)
+  else
+   render :new
+  end
  end
 
  private

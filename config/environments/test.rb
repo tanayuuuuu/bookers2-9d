@@ -1,4 +1,4 @@
-require "active_support/core_ext/integer/time"
+  require "active_support/core_ext/integer/time"
 
 # The test environment is used exclusively to run your application's
 # test suite. You never need to work with it otherwise. Remember that
@@ -44,7 +44,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :test
 
   # Print deprecation notices to the stderr.
-  config.active_support.deprecation = :stderr
+  config.active_support.deprecation = :silence
 
   # Raise exceptions for disallowed deprecations.
   config.active_support.disallowed_deprecation = :raise
