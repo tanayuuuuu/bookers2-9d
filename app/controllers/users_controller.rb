@@ -14,16 +14,21 @@ class UsersController < ApplicationController
 
  def edit
   @user = User.find(params[:id])
+  if @user == current_user
+   render "edit"
+  else
+    redirect_to user_path(current_user)
+  end
  end
 
  def update
   @user = User.find(params[:id])
   @user.update(user_params)
-   if @user.save
+   if @user.update(user_params)
     flash[:notice] = "You have updated user successfully."
       redirect_to user_path(current_user)
    else
-    flash[:alart] = "fault"
+    flash[:alart] = "is too short (minimum is 2 characters)"
     @users = User.all
     render "edit"
    end
