@@ -3,11 +3,11 @@
 one:
   user: one
   book: one
+  star: 1
   content: MyString
-  score: 1
 
 two:
   user: two
   book: two
+  star: 1
   content: MyString
-  score: 1
