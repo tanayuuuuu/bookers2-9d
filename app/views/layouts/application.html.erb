@@ -9,6 +9,7 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/b0e79b9344.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -16,7 +17,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <%= link_to root_path,class:"navbar-brand" do %>
-            Bookers
+            Bookersla
           <% end %>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -51,7 +52,7 @@
                   <% end %>
                   </li>
                   <li>
-                  <%= link_to about_path,class: 'nav-link text-light' do %>
+                  <%= link_to about_path, class: 'nav-link text-light' do %>
                     <i class="fas fa-link"></i>About
                   <% end %>
                   </li>

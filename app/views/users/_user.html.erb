@@ -24,6 +24,7 @@
           </tr>
         </tbody>
       </table>
+      <% if user.name != "guestuser" %>
       <div class="row">
         <%= link_to edit_user_path(user),class: "btn btn-outline-secondary btn-block edit_user_11572" do %>
           <i class="fas fa-user-cog"></i>
@@ -44,3 +45,4 @@
           <%= f.submit "Create Book",class: "btn btn-success" %>
           <% end %>
         </div>
+        <% end %>
