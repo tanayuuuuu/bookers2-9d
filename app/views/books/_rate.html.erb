@@ -1,16 +1,13 @@
-<div id="book_rating">
- <script>
- javascript:
-  $('#book_rating').raty({
+<script id="rating-book">
+$('#rating-book').raty({
   cancel:     true,
-  cancelOff:  'cancel-off.png',
-  cancelOn:   'cancel-on.png',
+  cancelOff:  'raty/cancel-off.png',
+  cancelOn:   'ratycancel-on.png',
   half:       true,
   size:       24,
-  starHalf:   'star-half.png',
-  starOff:    'star-off.png',
-  starOn:     'star-on.png',
-  scoreName: "book[star]"
-  });
- </script>
-</div>
+  starHalf:   'raty/star-half.png',
+  starOff:    'raty/star-off.png',
+  starOn:     'raty/star-on.png'
+});
+</script>
+
