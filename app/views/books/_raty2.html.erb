@@ -1,0 +1,12 @@
+ <script>
+  $("#book-rat-<%= book.id %>").empty();
+   $('#book-rat-<%= book.id %>').raty({      //.idでどの評価であるかを取得
+     size: 38,
+     starOff:  '<%= asset_path('star-off.png') %>',
+     starOn : '<%= asset_path('star-on.png') %>',
+     starHalf: '<%= asset_path('star-half.png') %>',
+     half: true,
+     readOnly: true,                             //readOnlyオプションで読み込み専用とする。編集できない。
+     score: <%= book.star %>,              //scoreオプションで評価内容を取得
+   });
+ </script>

@@ -1,0 +1,11 @@
+ <script>
+  $("#star1").empty();
+   $('#star1').raty({
+     size     : 38,
+     starOff:  '<%= asset_path('star-off.png') %>',
+     starOn : '<%= asset_path('star-on.png') %>',
+     starHalf: '<%= asset_path('star-half.png') %>',
+     scoreName: 'book[star]',
+     half: true,
+   });
+ </script>
