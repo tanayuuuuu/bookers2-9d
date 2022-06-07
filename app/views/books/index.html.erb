@@ -4,6 +4,12 @@
     <%= render "users/user", user:   @user, book: @book %>
     <div class="col-md-8 offset-md-1">
     <h2>Books</h2>
+    <p>
+      <%= link_to "新しい順", books_path(latest: "true"), class: "btn btn-success" %>
+      <%= link_to "古い順", books_path(old: "true"), class: "btn btn-info" %>
+      <%= link_to "評価の高い順", books_path(rating: "true"), class: "btn btn-dark" %>
+      <%= link_to "評価の悪い順", books_path(rating_bad: "true"), class: "btn btn-warning" %>
+    </p>
     <table class="table table-hover table-inverse">
       <thred>
         <tr>

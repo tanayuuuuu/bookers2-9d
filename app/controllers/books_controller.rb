@@ -20,6 +20,18 @@ class BooksController < ApplicationController
   end
 
   def index
+    if params[:latest]
+      @books = Book.latest
+    elsif params[:old]
+      @books = Book.old
+    elsif params[:rating]
+      @books = Book.rating
+    elsif params[:rating_bad]
+      @books = Book.rating_bad
+    else
+      @books = Book.all
+    end
+
     @books = Book.all
     @book = Book.new
     @user = current_user
