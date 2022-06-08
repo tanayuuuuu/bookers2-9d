@@ -6,9 +6,9 @@
     <h2>Books</h2>
     <p>
       <%= link_to "新しい順", books_path(latest: "true"), class: "btn btn-success" %>
-      <%= link_to "古い順", books_path(old: "true"), class: "btn btn-info" %>
-      <%= link_to "評価の高い順", books_path(rating: "true"), class: "btn btn-dark" %>
-      <%= link_to "評価の悪い順", books_path(rating_bad: "true"), class: "btn btn-warning" %>
+      | <%= link_to "古い順", books_path(old: "true"), class: "btn btn-info" %>
+      | <%= link_to "評価の高い順", books_path(rating: "true"), class: "btn btn-dark" %>
+      | <%= link_to "評価の悪い順", books_path(rating_bad: "true"), class: "btn btn-warning" %>
     </p>
     <table class="table table-hover table-inverse">
       <thred>
@@ -30,6 +30,8 @@
             <div class="detail-rating", id="book-rat-<%= book.id %>"></div>
             <div class="eval-star"><%= book.star %>/5点</div>
             <%= render "raty2", book: book %>
+             <td><%= l book.created_at %></td>
+             <td><p><%= link_to "#{book.book_comments.count} コメント", book_path(book.id), data:{"turbolinks" => false} %><p></td>
             </div>
           </td>
         </tr>

@@ -25,6 +25,7 @@
             <div class="detail-rating", id="book-rat-<%= book.id %>"></div>
             <div class="eval-star"><%= book.star %>/5点</div>
             <%= render "books/raty2", book: book %>
+           <td><p><%= link_to "#{book.book_comments.count} コメント", book_path(book.id) %><p></td>
            </td>
         </tr>
         <% end %>

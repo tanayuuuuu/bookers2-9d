@@ -12,6 +12,8 @@ module Bookers2
     config.load_defaults 6.1
     config.assets.enabled = true
     config.assets.precompile += %w(index.css)
+    config.time_zone = 'Asia/Tokyo'
+    config.i18n.default_locale = :ja
 
     # Configuration for the application, engines, and railties goes here.
     #

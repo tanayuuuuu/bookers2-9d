@@ -20,6 +20,8 @@ class BooksController < ApplicationController
   end
 
   def index
+    @books = Book.all
+
     if params[:latest]
       @books = Book.latest
     elsif params[:old]
@@ -32,7 +34,6 @@ class BooksController < ApplicationController
       @books = Book.all
     end
 
-    @books = Book.all
     @book = Book.new
     @user = current_user
   end
@@ -40,8 +41,9 @@ class BooksController < ApplicationController
   def show
     @book_new = Book.new
     @book = Book.find(params[:id])
-    @books = Book.all
     @user = @book.user
+    @comment = BookComment.new
+    @book_comments = @book.book_comments
   end
 
   def update
