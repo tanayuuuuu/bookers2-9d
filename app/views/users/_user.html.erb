@@ -42,14 +42,20 @@
         <lavel for="book_body">Opinion</lavel></br>
         <%= f.text_area :body %></br>
       </div>
+      <div class="form-group">
+      <%= form_with model: @book, local: true do |f| %>
+        <%= f.label :category,"Tag", class:"category-title" %></br>
+        <%= f.text_field :category %>
+      </div>
       <%= form_with(model: @book, local: true) do |f| %>
-        <div class="star-form-group" id="star1">               <%#id要素の付与がポイント%>
+      <div class="star-form-group" id="star1">               <%#id要素の付与がポイント%>
         <%= f.label :star,'Rate', class:'star-title' %>　<%#保存したいカラムの指定%>
         <%= render "books/raty" %></br>
-        <br>
-        <%= f.submit "Create Book",class: "btn btn-success" %>
+      <br>
+      <%= f.submit "Create Book",class: "btn btn-success" %>
+      <% end %>
+      </div>
         <% end %>
-        </div>
         <% end %>
       <% end %>
   </div>

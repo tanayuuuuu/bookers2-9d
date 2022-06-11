@@ -19,14 +19,17 @@
               <%= @book.body %>
             </td>
             <td>
-              <div class="star-group">
-                <div class="detail-rating", id="book-rat-<%= @book.id %>"></div>
-                <div class="eval-star"><%= @book.star %>/5点</div>
-                <%= render "raty2", book: @book %>
-              </div>
+              <%= @book.category %>
+            </td>
+            <td>
+            <div class="star-group">
+              <div class="detail-rating", id="book-rat-<%= @book.id %>"></div>
+              <div class="eval-star"><%= @book.star %>/5点</div>
+              <%= render "raty2", book: @book %>
+            </div>
             </td>
               <div class="comment_container">
-                <h3>コメント件数: <%= @book.book_comments.count %></h3>
+              <h3>コメント件数: <%= @book.book_comments.count %></h3>
               <table>
                 <% @book_comments.each do |book_comment| %>
                 <tr><td><%= book_comment.user.name %></td></tr>

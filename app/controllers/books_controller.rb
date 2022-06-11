@@ -68,10 +68,17 @@ class BooksController < ApplicationController
     redirect_to "/books"
   end
 
+
+  def search_book
+    @book = Book.new
+    @books = Book.search(params[:keyword])
+    @keyword = params[:keyword]
+  end
+
   private
 
   def book_params
-    params.require(:book).permit(:title, :body, :star)
+    params.require(:book).permit(:title, :body, :star, :category)
   end
 
   def correct_user
@@ -79,4 +86,5 @@ class BooksController < ApplicationController
     @user = @book.user
     redirect_to(books_path) unless @user == current_user
   end
+
 end

@@ -7,5 +7,6 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.float :star
       t.timestamps
     end
+    add_index :books,[:user_id, :created_at]
   end
 end
